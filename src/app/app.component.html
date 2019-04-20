@@ -1,18 +1,11 @@
-<div >
-  <div style="background: #11998e;
-          background: -webkit-linear-gradient(to right, #38ef7d, #11998e);
-          background: linear-gradient(to right, #38ef7d, #11998e);
-          width:100%; height:100vh;display: flex;
-    justify-content: center;">
-    <div style="    position: absolute;
-    top: 40%;
-    font-size: 50px;
-    font-weight: bold;
-    color: white;">
-      <span>WebSite under developement</span>
+<div>
+  <app-header [headerHeight]="headerHeight" [isHeaderSticky]="isHeaderSticky" ></app-header>
+  <div [ngStyle]="{'padding-top':headerHeight + 'px'}">
+    <div class="web-container" [ngStyle]="{'height':'calc(100vh - '+extraHeight+'px)'}">
+      <router-outlet></router-outlet>
     </div>
   </div>
+  <app-footer [footerHeight]="footerHeight" ></app-footer>
 </div>
 
 
-<router-outlet></router-outlet>
